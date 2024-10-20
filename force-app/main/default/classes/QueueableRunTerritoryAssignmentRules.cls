@@ -11,9 +11,9 @@ public class QueueableRunTerritoryAssignmentRules implements Queueable, Database
     public void execute(QueueableContext context) {
         
         String loginSOAPEndpoint = 'https://login.salesforce.com/services/Soap/c/55.0/';
-        String username = 'npsp.finance@roomtoread.org';
-        String password = 'Literacy123!';
-        String securityToken = '8TUHloQNy6UIlaJTcA8GufQu';
+        String username = '******************************';
+        String password = '*********************';
+        String securityToken = '**********************;
         
         String loginSOAPBody = 
             '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:enterprise.soap.sforce.com">' +
