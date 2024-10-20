@@ -1,0 +1,29 @@
+<template>
+    <template if:true={data}>
+        <article class="slds-card">
+            <div class="slds-page-header slds-border_bottom slds-grid">
+              <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                  <span class="slds-icon_container slds-icon-standard-opportunity" title="opportunity team members">
+                    <lightning-icon icon-name="standard:opportunity" alternative-text="Opportunities" title="Opportunities"></lightning-icon>
+                  </span>
+                </div>
+                <div class="slds-media__body">
+                  <h2 class="slds-card__header-title">
+                   Child and Grandchild Opportunities ({recordCount})
+                  </h2>
+                </div>
+              </header>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+                <lightning-datatable
+                key-field="Id"
+                data={data}
+                columns={columns}
+                hide-checkbox-column="true"
+                enable-infinite-loading>
+            </lightning-datatable>
+            </div>
+          </article>
+        </template>  
+</template>

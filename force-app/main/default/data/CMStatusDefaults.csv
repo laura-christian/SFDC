@@ -1,0 +1,29 @@
+Name,Campaign_Member_Status__c,Campaign_Record_Type__c,Default__c,Has_Responded__c
+EventCMStatus02,Registered,Event,TRUE,TRUE
+EventCMStatus03,No-Show,Event,FALSE,TRUE
+EventCMStatus04,RSVP - Yes,Event,FALSE,TRUE
+EventCMStatus05,RSVP - No,Event,FALSE,TRUE
+EventCMStatus06,RSVP - Tentative,Event,FALSE,TRUE
+EventCMStatus07,Invited,Event,FALSE,FALSE
+EventCMStatus08,Canceled,Event,FALSE,TRUE
+EventCMStatus09,Attended,Event,FALSE,TRUE
+EventCMStatus10,Donated,Event,FALSE,TRUE
+FundraisingCMStatus02,Donated,Fundraising,TRUE,TRUE
+MediaCMStatus01,Outreach Needed,Media,TRUE,FALSE
+MediaCMStatus02,Under Consideration,Media,FALSE,FALSE
+MediaCMStatus03,Declined,Media,FALSE,TRUE
+MediaCMStatus04,Covered,Media,FALSE,TRUE
+MediaCMStatus05,Pitched,Media,FALSE,FALSE
+P2PCMStatus01,Donated,Peer to Peer,TRUE,TRUE
+P2PCMStatus02,Fundraiser,Peer to Peer,FALSE,TRUE
+P2PCMStatus03,Team Captain,Peer to Peer,FALSE,TRUE
+P2PCMStatus04,Team Member,Peer to Peer,FALSE,TRUE
+StakeholderEngmtCMStatus01,Registered,Stakeholder Engagement,TRUE,TRUE
+StakeholderEngmtCMStatus02,No-Show,Stakeholder Engagement,FALSE,TRUE
+StakeholderEngmtCMStatus03,RSVP - Yes,Stakeholder Engagement,FALSE,TRUE
+StakeholderEngmtCMStatus04,RSVP - No,Stakeholder Engagement,FALSE,TRUE
+StakeholderEngmtCMStatus05,RSVP - Tentative,Stakeholder Engagement,FALSE,TRUE
+StakeholderEngmtCMStatus06,Invited,Stakeholder Engagement,FALSE,FALSE
+StakeholderEngmtCMStatus07,Canceled,Stakeholder Engagement,FALSE,TRUE
+StakeholderEngmtCMStatus08,Attended,Stakeholder Engagement,FALSE,TRUE
+StakeholderEngmtCMStatus09,Donated,Stakeholder Engagement,FALSE,TRUE

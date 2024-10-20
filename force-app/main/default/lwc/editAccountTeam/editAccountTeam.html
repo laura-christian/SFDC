@@ -1,0 +1,98 @@
+<template>
+		<lightning-modal-header label="Edit Account Team"></lightning-modal-header>
+		<lightning-modal-body>
+			<template if:true={isLoading}>
+				<div>
+					<lightning-spinner alternative-text="Loading" size="medium" variant="brand"></lightning-spinner>
+				</div>
+			</template>
+			<table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+				<thead>
+					<tr>
+						<th class="" scope="col">
+							<div class="slds-truncate" title="Team Member">Team Member</div>
+						</th>
+						<th class="" scope="col">
+							<div class="slds-truncate" title="Role"><abbr class="slds-required" title="required">*</abbr>Role</div>
+						</th>
+						<th class="" scope="col">
+							<div class="slds-truncate" title="Start Date"><abbr class="slds-required" title="required">*</abbr>Start Date</div>
+						</th>
+						<th class="" scope="col">
+							<div class="slds-truncate" title="End Date">End Date</div>
+						</th>
+						<th>
+							<div class="slds-truncate" title="Action">Action</div>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<template for:each={accountTeamMembers} for:item="atm" for:index="index">
+						<tr key={atm.Id}>
+							<td>
+								<template lwc:if={atm.isNew}>
+									<lightning-record-picker style="max-width: 300px" class="userRecordPicker"
+										label="Team Member"
+										variant="label-hidden"
+										placeholder="Select team member..."
+										object-api-name="User"
+										data-id={atm.Id}
+										value={atm.UserId}
+										name={index}
+										onchange={handleRecordSelect}
+										filter={userFilter}
+										display-info={userDisplayInfo}>
+									</lightning-record-picker>
+								</template>							
+								<template lwc:else>
+									<a href="" name="index" onclick={viewUserRecord}>{atm.userName}</a>
+								</template>
+							</td>
+							<td>
+								<lightning-combobox class="roleCombobox"
+									variant="label-hidden" 
+									name={index}
+									data-id={atm.Id}
+									placeholder="Select role..."
+									value={atm.TeamMemberRole} 
+									options={rolePicklistOptions} 
+									onchange={handleRoleSelect}>
+								</lightning-combobox>
+							</td>
+							<td>
+								<input type="date" value={atm.Start_Date__c} class="startDateSelector" name={index} onchange={handleStartDateChange} required></input>
+							</td>
+							<td>
+								<input type="date" value={atm.End_Date__c} class="endDateSelector" name={index} onchange={handleEndDateChange}></input>
+							</td>
+							<td>
+							<template lwc:if={atm.isLast}>
+								<div class="slds-align_absolute-center">
+									<lightning-icon icon-name="action:new" class="slds-p-around_small" size="x-small" onclick={addRow}></lightning-icon>
+								</div>
+								</template>
+							<template lwc:elseif={atm.isNew}>
+								<div class="slds-align_absolute-center">
+									<lightning-icon icon-name="action:delete" class="slds-p-around_small" size="x-small" name={index} onclick={removeRow}></lightning-icon>
+								</div>
+							</template>
+							</td>
+						</tr>
+					</template>
+				</tbody>
+			</table>			
+		</lightning-modal-body>
+		<lightning-modal-footer>
+			<lightning-button
+				variant="neutral"
+				label="Cancel"
+				onclick={handleCancel}>
+			</lightning-button>
+			<lightning-button
+				variant="brand"
+				label="Save"
+				class="slds-m-left_x-small"
+				onclick={handleSave}>
+			</lightning-button>
+		</lightning-modal-footer>
+	</template>

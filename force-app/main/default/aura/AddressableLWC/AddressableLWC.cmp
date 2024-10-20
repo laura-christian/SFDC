@@ -1,0 +1,5 @@
+<aura:component implements="lightning:isUrlAddressable" description="c:AddressableLWC component">
+	<aura:handler name="init" value="{!this}" action="{!c.init}"></aura:handler>
+	<aura:handler name="change" value="{!v.pageReference}" action="{!c.init}"></aura:handler>
+	<lightning:navigation aura:id="navService"></lightning:navigation>
+</aura:component>
